@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - Dayanand</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        .hero {
+            background: linear-gradient(to right, #000428, #004e92); /* Gradient background */
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #ff6600;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #e65c00;
+        }
+        .projects {
+            padding: 60px 0;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        html {
+              scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Hi, I'm Dayanand</h1>
+            <p class="lead">🚀 Passionate Python Developer skilled in Flask, Selenium, MySQL, and RPA.</p>
+            <p>💡 Building scalable web applications and exploring Data Science & Machine Learning.</p>
+            <a href="https://github.com/Dayanand-K-05?tab=repositories" class="btn btn-primary btn-lg">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container my-5">
+        <h2 class="text-center mb-4">About Me</h2>
+        <p class="text-center">I am a passionate developer focused on backend development, automation, and data science. I love building projects that solve real-world problems.</p>
+    </section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">My Blog Website</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514" class="card-img-top" alt="Blog Website">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Flask Blog Website</h5>
+                        <p class="card-text">A dynamic blog website built with Flask, featuring user authentication and a contact form.</p>
+                        <a href="https://simple-blog-website-jrvk.onrender.com/" class="btn btn-primary" target="_blank">Visit My Blog</a>
+                        <a href="https://github.com/Dayanand-K-05?tab=repositories" class="btn btn-outline-dark" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="container my-5">
+    <h2 class="text-center mb-4">Contact Me</h2>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/contact" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 My Portfolio | Designed with ❤️</p>
+        <p>
+            <a href="https://github.com/Dayanand-K-05?tab=repositories" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/dayanand-k-9b220228a/" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
